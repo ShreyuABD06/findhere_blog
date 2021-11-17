@@ -23,9 +23,9 @@ const PostDetail = ({ post }) => {
             className="text-blue-700 cursor-pointer"
             target="_blank"
             key={index}
-            href={obj.href}
+            href={obj?.href}
           >
-            {obj.title}
+            {obj?.title}
           </a>
         );
       }
@@ -62,10 +62,10 @@ const PostDetail = ({ post }) => {
         return (
           <img
             key={index}
-            alt={obj.title}
-            height={obj.height}
-            width={obj.width}
-            src={obj.src}
+            alt={obj?.title}
+            height={obj?.height}
+            width={obj?.width}
+            src={obj?.src}
           />
         );
       //    case 'bulleted-list':
@@ -122,7 +122,7 @@ const PostDetail = ({ post }) => {
             </span>
           </div>
         </div>
-        <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
+        <h1 className="mb-8 text-3xl font-semibold">{post?.title}</h1>
         {post.content.raw.children.map((typeObj, index) => {
           const children = typeObj.children.map((item, itemIndex) =>
             getContentFragment(itemIndex, item.text, item)
